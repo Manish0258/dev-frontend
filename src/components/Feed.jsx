@@ -4,11 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { addFeed } from "../utils/feedSlice";
 import { useEffect } from "react";
 import UserCard from "./UserCard";
-
+//import ProfileCard from './ProfileCard'
 const Feed=()=>{
      const feed = useSelector(( store )  => store.feed);
      //console.log(feed);
     const dispatch = useDispatch();
+
+
+    //const {firstName,photoUrl}=feed[1];
    
 
 
@@ -38,8 +41,20 @@ const Feed=()=>{
     return (
        
         feed &&(
-    <div className="flex justify-center my-10">
-        <UserCard user={feed[0]}/>
+    <div className="flex justify-center my-2">
+       <UserCard user={feed[0]}/> 
+      {/*<ProfileCard
+//   name={firstName}
+//   title="Software Engineer"
+//   handle="javicodes"
+//   status="Online"
+//   contactText="Contact Me"
+//   avatarUrl={photoUrl}
+//   showUserInfo={true}
+//   enableTilt={true}
+//   enableMobileTilt={false}
+//   onContactClick={() => console.log('Contact clicked')}
+/>*/}
     </div>)
     )
 }
